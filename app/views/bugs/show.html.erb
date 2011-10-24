@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @bug.context %></h1>
+<em><%= @bug.url%></em>
+<br/>
+
+<pre>
+  <%= @bug.content %>
+</pre>
+
+<%= link_to 'Edit', edit_bug_path(@bug) %> |
+<%= link_to 'Back', bugs_path %>

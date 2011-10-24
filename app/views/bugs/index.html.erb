@@ -1,0 +1,30 @@
+<h1>Listing bugs</h1>
+
+<table>
+  <tr>
+    <tr width='50'></tr>
+    <th>URL</th>
+    <th>Context</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr><td><br/></td></tr>
+
+<% @bugs.each do |url, bugs| %>
+  <tr>
+    <td colspan='6'><%= url %></td>
+  </tr>
+  
+  <% bugs.each do |bug| %>
+    <tr>
+      <td></td>
+      <td><strong><%= bug.context %></strong></td>
+      <td><%= bug.content.truncate(30) %></td>
+      <td><%= link_to 'Show', bug %></td>
+      <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+      <td><%= link_to 'Destroy', bug, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
